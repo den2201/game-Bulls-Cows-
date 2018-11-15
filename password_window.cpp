@@ -32,6 +32,7 @@ number.setNum(programs_number);
     lab_temp=new QLabel("\t\t\t\t\t\t\t");
     pole_input=new QLineEdit;
     pole_input->resize(20,4);
+
     h_lay_1=new QHBoxLayout;
     h_lay_1->addWidget(lab_input);
     h_lay_1->addWidget(pole_input);
@@ -40,7 +41,7 @@ number.setNum(programs_number);
     h_box_result->addWidget(lab_name_of_res);
     h_box_result->addWidget(lab_result);
     h_box_result->addWidget(edit_pole);
-
+edit_pole->setReadOnly(true);
 
     but_ok=new QPushButton("OK");
     but_close= new QPushButton("Выход");
@@ -53,6 +54,11 @@ number.setNum(programs_number);
     v_lay_1->addWidget(but_close);
     v_lay_1->addWidget(but_rules);
     setLayout(v_lay_1);
+
+    palet=new QPalette;
+    palet->setColor(backgroundRole(),Qt::gray);
+    setPalette(*palet);
+
 
 
 
@@ -114,8 +120,6 @@ if (numb==my_numb)
 {
     mess_box_victory=new QMessageBox;
     QString text;
-
-
     mess_box_victory->setText("ВЫ УГАДАЛИ!!!");
 
     mess_box_victory->setWindowTitle("ПОБЕДА!!!");
@@ -133,10 +137,13 @@ if (numb==my_numb)
 else
 {
 
+edit_pole->setReadOnly(false);
 pole_input->selectAll();
 pole_input->copy();
 edit_pole->paste();
+
 edit_pole->insertPlainText(" *** ");
+edit_pole->setReadOnly(true);
 
 
     function(numb, my_numb);
@@ -204,8 +211,6 @@ void function(int &numb, int& my_numb)
 
     delete cow;
     delete bull;
-
-
 
 
 

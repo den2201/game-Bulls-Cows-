@@ -11,6 +11,7 @@
 #include <QMessageBox>
 #include <QTextEdit>
 #include "ctime"
+#include <QPalette>
 
 class Pass_Window:public QDialog
 {
@@ -30,6 +31,7 @@ private:
     QVBoxLayout* v_lay_1;
     QMessageBox* mess_box, *mess_box_victory;
     QTextEdit* edit_pole;
+    QPalette* palet;
 
     int* mass_number=new int[4];
     int* comp_number=new int[4];
