@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Pass_Window_t {
-    QByteArrayData data[7];
-    char stringdata0[62];
+    QByteArrayData data[9];
+    char stringdata0[82];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,12 +36,15 @@ QT_MOC_LITERAL(1, 12, 10), // "input_text"
 QT_MOC_LITERAL(2, 23, 0), // ""
 QT_MOC_LITERAL(3, 24, 9), // "copy_text"
 QT_MOC_LITERAL(4, 34, 4), // "text"
-QT_MOC_LITERAL(5, 39, 11), // "push_ok_btn"
-QT_MOC_LITERAL(6, 51, 10) // "show_rules"
+QT_MOC_LITERAL(5, 39, 5), // "sound"
+QT_MOC_LITERAL(6, 45, 11), // "push_ok_btn"
+QT_MOC_LITERAL(7, 57, 10), // "show_rules"
+QT_MOC_LITERAL(8, 68, 13) // "sound_victory"
 
     },
     "Pass_Window\0input_text\0\0copy_text\0"
-    "text\0push_ok_btn\0show_rules"
+    "text\0sound\0push_ok_btn\0show_rules\0"
+    "sound_victory"
 };
 #undef QT_MOC_LITERAL
 
@@ -51,26 +54,30 @@ static const uint qt_meta_data_Pass_Window[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       2,       // signalCount
+       3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x06 /* Public */,
-       3,    1,   35,    2, 0x06 /* Public */,
+       1,    0,   44,    2, 0x06 /* Public */,
+       3,    1,   45,    2, 0x06 /* Public */,
+       5,    0,   48,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,   38,    2, 0x0a /* Public */,
-       6,    0,   39,    2, 0x0a /* Public */,
+       6,    0,   49,    2, 0x0a /* Public */,
+       7,    0,   50,    2, 0x0a /* Public */,
+       8,    0,   51,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    4,
+    QMetaType::Void,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -85,8 +92,10 @@ void Pass_Window::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         switch (_id) {
         case 0: _t->input_text(); break;
         case 1: _t->copy_text((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 2: _t->push_ok_btn(); break;
-        case 3: _t->show_rules(); break;
+        case 2: _t->sound(); break;
+        case 3: _t->push_ok_btn(); break;
+        case 4: _t->show_rules(); break;
+        case 5: _t->sound_victory(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -102,6 +111,13 @@ void Pass_Window::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
             using _t = void (Pass_Window::*)(QString );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Pass_Window::copy_text)) {
                 *result = 1;
+                return;
+            }
+        }
+        {
+            using _t = void (Pass_Window::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Pass_Window::sound)) {
+                *result = 2;
                 return;
             }
         }
@@ -137,13 +153,13 @@ int Pass_Window::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 4;
+        _id -= 6;
     }
     return _id;
 }
@@ -159,6 +175,12 @@ void Pass_Window::copy_text(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
+}
+
+// SIGNAL 2
+void Pass_Window::sound()
+{
+    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

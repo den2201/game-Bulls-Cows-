@@ -234,6 +234,7 @@ Makefile: Password_window.pro ..\..\..\QT\5.12.0\msvc2015\mkspecs\win32-msvc\qma
 		..\..\..\QT\5.12.0\msvc2015\mkspecs\features\qt_config.prf \
 		..\..\..\QT\5.12.0\msvc2015\mkspecs\win32-msvc\qmake.conf \
 		..\..\..\QT\5.12.0\msvc2015\mkspecs\features\spec_post.prf \
+		.qmake.stash \
 		..\..\..\QT\5.12.0\msvc2015\mkspecs\features\exclusive_builds.prf \
 		..\..\..\QT\5.12.0\msvc2015\mkspecs\common\msvc-version.conf \
 		..\..\..\QT\5.12.0\msvc2015\mkspecs\features\toolchain.prf \
@@ -258,8 +259,10 @@ Makefile: Password_window.pro ..\..\..\QT\5.12.0\msvc2015\mkspecs\win32-msvc\qma
 		..\..\..\QT\5.12.0\msvc2015\mkspecs\features\yacc.prf \
 		..\..\..\QT\5.12.0\msvc2015\mkspecs\features\lex.prf \
 		Password_window.pro \
+		..\..\..\QT\5.12.0\msvc2015\lib\Qt5Multimedia.prl \
 		..\..\..\QT\5.12.0\msvc2015\lib\Qt5Widgets.prl \
 		..\..\..\QT\5.12.0\msvc2015\lib\Qt5Gui.prl \
+		..\..\..\QT\5.12.0\msvc2015\lib\Qt5Network.prl \
 		..\..\..\QT\5.12.0\msvc2015\lib\Qt5Core.prl \
 		..\..\..\QT\5.12.0\msvc2015\lib\qtmaind.prl
 	$(QMAKE) -o Makefile Password_window.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -422,6 +425,7 @@ Makefile: Password_window.pro ..\..\..\QT\5.12.0\msvc2015\mkspecs\win32-msvc\qma
 ..\..\..\QT\5.12.0\msvc2015\mkspecs\features\qt_config.prf:
 ..\..\..\QT\5.12.0\msvc2015\mkspecs\win32-msvc\qmake.conf:
 ..\..\..\QT\5.12.0\msvc2015\mkspecs\features\spec_post.prf:
+.qmake.stash:
 ..\..\..\QT\5.12.0\msvc2015\mkspecs\features\exclusive_builds.prf:
 ..\..\..\QT\5.12.0\msvc2015\mkspecs\common\msvc-version.conf:
 ..\..\..\QT\5.12.0\msvc2015\mkspecs\features\toolchain.prf:
@@ -446,8 +450,10 @@ Makefile: Password_window.pro ..\..\..\QT\5.12.0\msvc2015\mkspecs\win32-msvc\qma
 ..\..\..\QT\5.12.0\msvc2015\mkspecs\features\yacc.prf:
 ..\..\..\QT\5.12.0\msvc2015\mkspecs\features\lex.prf:
 Password_window.pro:
+..\..\..\QT\5.12.0\msvc2015\lib\Qt5Multimedia.prl:
 ..\..\..\QT\5.12.0\msvc2015\lib\Qt5Widgets.prl:
 ..\..\..\QT\5.12.0\msvc2015\lib\Qt5Gui.prl:
+..\..\..\QT\5.12.0\msvc2015\lib\Qt5Network.prl:
 ..\..\..\QT\5.12.0\msvc2015\lib\Qt5Core.prl:
 ..\..\..\QT\5.12.0\msvc2015\lib\qtmaind.prl:
 qmake: FORCE

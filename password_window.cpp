@@ -11,13 +11,11 @@ Pass_Window::Pass_Window(QWidget *parent):QDialog(parent)
 {
     QString number;
     number_of_answers=0;
-    srand(time(NULL));
-    programs_number=999+rand()%9000;
-    qDebug()<<programs_number;
-
+    set_number();
 number.setNum(programs_number);
 
-
+play_app=new QMediaPlayer;
+play_app->setMedia(QUrl::fromLocalFile("/0041.mp3"));
     mess_box=new QMessageBox;
     mess_box->resize(400,400);
     edit_pole=new QTextEdit;
@@ -71,11 +69,15 @@ edit_pole->setReadOnly(true);
 QObject::connect(but_close,SIGNAL(clicked()),this,SLOT(close()));
 QObject::connect(but_ok, &QPushButton::clicked,this, &Pass_Window::push_ok_btn);
 QObject::connect(but_rules, &QPushButton::clicked,this, &Pass_Window::show_rules);
-
+QObject::connect(this,SIGNAL(sound()), this, SLOT(sound_victory()));
 
 
 }
-
+void Pass_Window::sound_victory()
+{
+    play_app->play();
+    
+}
 
 
 Pass_Window::~Pass_Window()
@@ -126,11 +128,13 @@ if (numb==my_numb)
 
 
     mess_box_victory->show();
-    number_of_answers=0;
+    emit sound();
+set_number();
+edit_pole->clear();
+
+
     lab_result->setNum(number_of_answers);
-
-
-
+ number_of_answers=0;
 
 
 }
