@@ -15,7 +15,9 @@ Pass_Window::Pass_Window(QWidget *parent):QDialog(parent)
 number.setNum(programs_number);
 
 play_app=new QMediaPlayer;
+
 play_app->setMedia(QUrl::fromLocalFile("/0041.mp3"));
+
     mess_box=new QMessageBox;
     mess_box->resize(400,400);
     edit_pole=new QTextEdit;
@@ -204,17 +206,20 @@ void function(int &numb, int& my_numb)
 
 
     QString text1, text2,text3; QMessageBox* messbox=new QMessageBox;
-
+QMediaPlayer* play_lose=new QMediaPlayer;
+play_lose->setMedia(QUrl::fromLocalFile("002.mp3"));
     text1.setNum(*bull);
     text2.setNum(*cow);
     messbox->resize(300,300);
     messbox->setText("В загаданном числе:\nБыков и Коров:\n"+text1+"\t"+text2);
     text3="В загаданном числе:\nБыков и Коров:\n"+text1+"\t"+text2;
-
+play_lose->play();
     messbox->show();
+
 
     delete cow;
     delete bull;
+
 
 
 

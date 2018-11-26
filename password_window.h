@@ -33,7 +33,7 @@ private:
     QMessageBox* mess_box, *mess_box_victory;
     QTextEdit* edit_pole;
     QPalette* palet;
-    QMediaPlayer* play_app;
+    QMediaPlayer* play_app, *play_lose;
 
     int* mass_number=new int[4];
     int* comp_number=new int[4];
@@ -60,6 +60,7 @@ signals:
     void input_text();
     void copy_text(QString text);
     void sound();
+
 
 
 public slots:
